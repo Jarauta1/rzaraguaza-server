@@ -1,6 +1,6 @@
 import { AmarillaInterface } from "../interfaces/amarilla.interface";
 
-export class AmarillasModel implements AmarillaInterface {
+export class AmarillaModel implements AmarillaInterface {
     amarilla_id: number;
     jugador_id: number;
     partido_id: number;
