@@ -1,7 +1,7 @@
 import { dbInstance } from './postgres-instance';
 import Constant from '../util/constants';
 import { AmarillaInterface } from '../util/interfaces/amarilla.interface';
-import { AmarillasModel } from '../util/models/amarilla.model';
+import { AmarillaModel } from '../util/models/amarilla.model';
 
 //#region Amarilla
 export const getAmarillas = async () => {
@@ -9,7 +9,7 @@ export const getAmarillas = async () => {
     .withSchema(Constant.schema)
     .select("*")
     .from(Constant.tables.amarilla)
-    const parsedAmarillas = amarillas.map((am: any) => new AmarillasModel(am))
+    const parsedAmarillas = amarillas.map((am: any) => new AmarillaModel(am))
     return parsedAmarillas
 }
 
@@ -19,7 +19,7 @@ export const getAmarillasById = async (amarilla_id: number) => {
     .select('*')
     .from(Constant.tables.amarilla)
     .where('amarilla.amarilla_id', amarilla_id)
-    const parsedAmarilla = amarilla.map((am: any) => new AmarillasModel(am));
+    const parsedAmarilla = amarilla.map((am: any) => new AmarillaModel(am));
     return parsedAmarilla
 }
 
@@ -34,7 +34,7 @@ export const createAmarilla = async (amarilla: AmarillaInterface) => {
         )
         .select("*")
         .from("result")
-    } catch (error: any) { console.log(error)
+    } catch (error: any) {
         throw new Error(
             `createAmarilla: ${JSON.stringify(error.stack).split(" - ")[1]}`
         );
