@@ -1,5 +1,5 @@
 -- mie 17 nov 2021
--- Model: rzaraguaza   Version: 0.0
+-- Model: rzaraguaza   Version: 0.0.0
 
 drop schema if exists rzaraguaza cascade;
 create schema rzaraguaza;
