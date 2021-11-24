@@ -1,0 +1,21 @@
+export interface JugadorInterface {
+    jugador_id: number,
+    equipo_id: number,
+    liga_id: number,
+    nombre_jugador: string,
+    apellido1: string,
+    apellido2: string,
+    apodo: string,
+    fecha_nacimiento: string,
+    foto_jugador: string,
+    dorsal: number,
+    posicion: string,
+    altura: number,
+    total_goles: number,
+    total_asistencias: number,
+    total_amarillas: number,
+    total_rojas: number,
+    total_encajados: number,
+    pais: string,
+    ciudad: string
+}
