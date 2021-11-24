@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import ligaRoutes from './liga.routes';
+import partidoRoutes from './partido.routes';
 import equipoRoutes from './equipo.routes';
 import jugadorRoutes from './jugador.routes';
 import golRoutes from './gol.routes';
@@ -10,6 +11,7 @@ import rojaRoutes from './roja.routes';
 const router: Router = Router();
 
 router.use('/liga', ligaRoutes);
+router.use('/partido', partidoRoutes);
 router.use('/equipo', equipoRoutes);
 router.use('/jugador', jugadorRoutes);
 router.use('/gol', golRoutes);
