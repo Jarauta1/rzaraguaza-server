@@ -25,5 +25,16 @@
     "@types/node": "^16.11.9",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarauta1/rzaraguaza-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jarauta1/rzaraguaza-server/issues"
+  },
+  "homepage": "https://github.com/Jarauta1/rzaraguaza-server#readme",
+  "engines": {
+    "node": "14.16.1"
   }
 }
