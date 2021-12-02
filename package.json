@@ -4,13 +4,13 @@
   "description": "RZaraguaza API",
   "main": "src/index.ts",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.ts",
     "start:dev": "nodemon src/index.ts",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "D.Jarauta",
   "license": "ISC",
   "dependencies": {
     "@types/cors": "^2.8.12",

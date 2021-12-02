@@ -5,14 +5,16 @@ import { nextTick } from 'process';
 
 const app: Application = express();
 app.use(cors());
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
 
-app.use((req, res, next) => {
+app.use((req,res,next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
-        "Acces-Control-Allow-Headers",
+        "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
     );
-    next();
+    next();  
 });
 
 app.get('/', (req, res) => {
