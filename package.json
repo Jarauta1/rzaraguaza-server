@@ -5,8 +5,14 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.ts"
+    "start": "node src/index.ts",
+    "start:dev": "nodemon src/index.ts",
+    "build": "webpack",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
   },
+  "keywords": [],
   "author": "D.Jarauta",
   "license": "ISC",
   "dependencies": {
@@ -16,11 +22,23 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "knex": "^0.95.14",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {
     "@types/node": "^16.11.9",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarauta1/rzaraguaza-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jarauta1/rzaraguaza-server/issues"
+  },
+  "homepage": "https://github.com/Jarauta1/rzaraguaza-server#readme",
+  "engines": {
+    "node": "14.16.1"
   }
 }

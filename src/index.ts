@@ -1,7 +1,6 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import routes from './app-routes/app.routes';
-import { nextTick } from 'process';
 
 const app: Application = express();
 app.use(cors());
