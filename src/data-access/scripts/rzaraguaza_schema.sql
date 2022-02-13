@@ -61,6 +61,7 @@ create table if not exists rzaraguaza.jugador (
   	apodo VARCHAR(45),
   	fecha_nacimiento TIMESTAMP,
   	foto_jugador VARCHAR,
+	foto_portada VARCHAR,
   	dorsal INT,
   	posicion VARCHAR(10),
   	altura INT,

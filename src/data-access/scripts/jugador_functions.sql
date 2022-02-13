@@ -6,6 +6,7 @@ create or replace function rzaraguaza.create_jugador(
 	i_apodo VARCHAR,
 	i_fecha_nacimiento TIMESTAMP,
 	i_foto_jugador VARCHAR,
+	i_foto_portada VARCHAR,
 	i_dorsal INT,
 	i_posicion VARCHAR,
 	i_altura INT,
@@ -32,8 +33,8 @@ begin
 		raise exception 'Dorsal ya asignado';
 	else
 		if v_equipo_exists is true then
-				insert into rzaraguaza.jugador (equipo_id, nombre_jugador, apellido1, apellido2, apodo, fecha_nacimiento, foto_jugador, dorsal, posicion, altura, total_goles, total_asistencias, total_amarillas, total_rojas, total_encajados, pais, ciudad)
-				values (i_equipo_id, i_nombre_jugador, i_apellido1, i_apellido2, i_apodo, i_fecha_nacimiento, i_foto_jugador, i_dorsal, i_posicion, i_altura, i_total_goles, i_total_asistencias, i_total_amarillas, i_total_rojas, i_total_encajados, i_pais, i_ciudad);
+				insert into rzaraguaza.jugador (equipo_id, nombre_jugador, apellido1, apellido2, apodo, fecha_nacimiento, foto_jugador, foto_portada, dorsal, posicion, altura, total_goles, total_asistencias, total_amarillas, total_rojas, total_encajados, pais, ciudad)
+				values (i_equipo_id, i_nombre_jugador, i_apellido1, i_apellido2, i_apodo, i_fecha_nacimiento, i_foto_jugador, i_foto_portada, i_dorsal, i_posicion, i_altura, i_total_goles, i_total_asistencias, i_total_amarillas, i_total_rojas, i_total_encajados, i_pais, i_ciudad);
 		else
 			raise exception 'Equipo no existe';
 		end if;
@@ -50,6 +51,7 @@ create or replace function rzaraguaza.update_jugador(
 	i_apodo VARCHAR,
 	i_fecha_nacimiento TIMESTAMP,
 	i_foto_jugador VARCHAR,
+	i_foto_portada VARCHAR,
 	i_dorsal INT,
 	i_posicion VARCHAR,
 	i_altura VARCHAR,
@@ -75,6 +77,7 @@ begin
 			apodo = i_apodo,
 			fecha_nacimiento = i_fecha_nacimiento,
 			foto_jugador = i_foto_jugador,
+			foto_portada = i_foto_portada,
 			dorsal = i_dorsal,
 			posicion = i_posicion,
 			altura = i_altura,
