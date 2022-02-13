@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.use('/rzaraguaza', express.json(), routes);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 })

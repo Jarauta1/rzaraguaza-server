@@ -4,17 +4,22 @@
   "description": "RZaraguaza API",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node dist/index.js",
     "start:dev": "nodemon src/index.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-docker": "sudo docker build -t paywall-api .",
+    "submit-cloudrun": "gcloud builds submit --tag gcr.io/hipatia-pro/paywall-api --project hipatia-pro",
+    "deploy-cloudrun": "npm run submit-cloudrun && gcloud run deploy paywall-api --image gcr.io/hipatia-pro/paywall-api:latest --update-env-vars NODE_ENV=production --project hipatia-pro --platform managed --region europe-west1"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarauta1/rzaraguaza-server.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -22,7 +27,9 @@
     "pg": "^8.7.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/node": "^16.11.9",
+    "@types/express": "^4.17.13",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   }
